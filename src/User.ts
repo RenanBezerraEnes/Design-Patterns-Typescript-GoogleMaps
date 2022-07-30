@@ -1,5 +1,4 @@
 import faker from 'faker'
-import { forEachLeadingCommentRange } from 'typescript';
 
 export class User {
     name: string;
