@@ -1,5 +1,9 @@
-import {User} from "./User"
-import { Company } from "./Company";
+interface Marker {
+    location: {
+        lat: number,
+        lng: number
+    }
+}
 
 export class CustomMap {
     private googleMap: google.maps.Map;
@@ -14,7 +18,7 @@ export class CustomMap {
         });
     }
 
-    addMarker(marker : User | Company): void {
+    addMarker(marker : Marker): void {
         new google.maps.Marker({
             map: this.googleMap,
             position: {
@@ -23,7 +27,7 @@ export class CustomMap {
             }
         })
     }
-
+// The bad approach is to have to functions for each company,user...
     // addCompanyMarker(company: Company): void {
     //     new google.maps.Marker({
     //         map: this.googleMap,
