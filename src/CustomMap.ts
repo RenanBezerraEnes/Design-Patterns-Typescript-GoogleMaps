@@ -1,10 +1,11 @@
-interface Marker {
+export interface Marker {
     location: {
         lat: number,
         lng: number
     }
 
-    markerContent(): string
+    markerContent(): string;
+    color: string
 }
 
 export class CustomMap {
