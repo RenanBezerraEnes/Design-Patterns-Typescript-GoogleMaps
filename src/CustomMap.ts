@@ -3,6 +3,8 @@ interface Marker {
         lat: number,
         lng: number
     }
+
+    markerContent(): string
 }
 
 export class CustomMap {
@@ -29,13 +31,13 @@ export class CustomMap {
 
         assignedMarker.addListener('click', () => {
             const infoWindow = new google.maps.InfoWindow({
-                content: 'Hi there'
+                content: marker.markerContent()
             })
             infoWindow.open(this.googleMap, assignedMarker)
         })
     }
 
-    
+
 // The bad approach is to have to functions for each company,user...
     // addCompanyMarker(company: Company): void {
     //     new google.maps.Marker({
