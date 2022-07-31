@@ -1,9 +1,9 @@
 /// <reference types="@types/google.maps" />
-// import {User} from './User'
+import {User} from './User'
 // import {Company} from './Company'
 import { CustomMap } from "./CustomMap";
 
-// const user = new User()
+const user = new User()
 
 // console.log(user)
 
@@ -11,6 +11,7 @@ import { CustomMap } from "./CustomMap";
 
 // console.log(company)
 
-new CustomMap('map')
+const customMap = new CustomMap('map')
+customMap.addUserMarker(user)
 
 
