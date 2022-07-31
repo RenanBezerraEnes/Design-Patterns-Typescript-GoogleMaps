@@ -19,14 +19,23 @@ export class CustomMap {
     }
 
     addMarker(marker : Marker): void {
-        new google.maps.Marker({
+        const assignedMarker = new google.maps.Marker({
             map: this.googleMap,
             position: {
                 lat: marker.location.lat,
                 lng: marker.location.lng
             }
         })
+
+        assignedMarker.addListener('click', () => {
+            const infoWindow = new google.maps.InfoWindow({
+                content: 'Hi there'
+            })
+            infoWindow.open(this.googleMap, assignedMarker)
+        })
     }
+
+    
 // The bad approach is to have to functions for each company,user...
     // addCompanyMarker(company: Company): void {
     //     new google.maps.Marker({
